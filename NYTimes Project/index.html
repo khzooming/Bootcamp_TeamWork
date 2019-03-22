@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>
+                New York Times Search
+            </h1>
+        </header>
+        <div class="container">
+            <h2>
+                Search Parameters
+            </h2>
+            <div class="innerDiv">
+
+                <form>
+                    <h3>
+                        Search Term:<br>
+                    </h3>
+                    <input id="searchTerm" type="text" name="Search Term:"><br>
+                    <h3>
+                        Number of Records to Retrieve:<br>
+                    </h3>
+                    <select id="numberOfResults">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                    </select>
+                    <br>
+                    <h3>Start Year(Optional):</h3><br>
+                    <input type="text" name="Start Year(Optional):"><br>
+
+                    <h3>End Year(Optional):<br></h3>
+                    <input type="text" name="End Year(Optional):"><br>
+
+                </form>
+                <br>
+                <button id="search">Search</button>
+                <button id="clear">Clear Results</button>
+                <br>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <h2>
+                Top Articles
+            </h2>
+            <div class="innerDiv">
+                <div id="article">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+
+            var searchT = $("#searchTerm").val()
+            var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchT +
+            "&api-key=0LT6UlwJdwLccdA9JRXOaX8ONwZkWR33"
+        
+        
+        
+        
+        
+        
+    $.ajax({
+                url: queryURL,
+            method: "GET"
+            })
+    .then(function (response) {
+                console.log(response)
+            })
+        
+        
+        
+    </script>
+    </script>
+</body>
+
+</html>
